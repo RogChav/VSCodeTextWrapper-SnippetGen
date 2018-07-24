@@ -87,6 +87,13 @@ int main()
             positions.push_back(pos);
             pos = stringDB[i].find("\"", pos + 1);
         }
+        
+        pos = stringDB[i].find("\\n", 0);
+        while (pos != string::npos)
+        {
+            positions.push_back(pos);
+            pos = stringDB[i].find("\\n", pos + 1);
+        }
 
         for (size_t j = 0; j < positions.size(); j++)
         {
